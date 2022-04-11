@@ -1,0 +1,12 @@
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Core\Ecommerce.Core\bin\Debug\net5.0\Ecommerce.Core.deps.json
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Core\Ecommerce.Core\bin\Debug\net5.0\Ecommerce.Core.dll
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Core\Ecommerce.Core\bin\Debug\net5.0\Ecommerce.Core.pdb
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Core\Ecommerce.Core\obj\Debug\net5.0\Ecommerce.Core.csproj.AssemblyReference.cache
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Core\Ecommerce.Core\obj\Debug\net5.0\Ecommerce.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Core\Ecommerce.Core\obj\Debug\net5.0\Ecommerce.Core.AssemblyInfoInputs.cache
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Core\Ecommerce.Core\obj\Debug\net5.0\Ecommerce.Core.AssemblyInfo.cs
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Core\Ecommerce.Core\obj\Debug\net5.0\Ecommerce.Core.csproj.CoreCompileInputs.cache
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Core\Ecommerce.Core\obj\Debug\net5.0\Ecommerce.Core.dll
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Core\Ecommerce.Core\obj\Debug\net5.0\refint\Ecommerce.Core.dll
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Core\Ecommerce.Core\obj\Debug\net5.0\Ecommerce.Core.pdb
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Core\Ecommerce.Core\obj\Debug\net5.0\ref\Ecommerce.Core.dll

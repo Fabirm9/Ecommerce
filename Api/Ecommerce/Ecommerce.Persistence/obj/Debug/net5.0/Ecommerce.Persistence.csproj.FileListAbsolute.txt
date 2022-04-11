@@ -1,0 +1,15 @@
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\bin\Debug\net5.0\Ecommerce.Persistence.deps.json
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\bin\Debug\net5.0\Ecommerce.Persistence.dll
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\bin\Debug\net5.0\Ecommerce.Persistence.pdb
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\bin\Debug\net5.0\Ecommerce.Core.dll
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\bin\Debug\net5.0\Ecommerce.Core.pdb
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\obj\Debug\net5.0\Ecommerce.Persistence.csproj.AssemblyReference.cache
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\obj\Debug\net5.0\Ecommerce.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\obj\Debug\net5.0\Ecommerce.Persistence.AssemblyInfoInputs.cache
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\obj\Debug\net5.0\Ecommerce.Persistence.AssemblyInfo.cs
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\obj\Debug\net5.0\Ecommerce.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\obj\Debug\net5.0\Ecommerce.Persistence.csproj.CopyComplete
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\obj\Debug\net5.0\Ecommerce.Persistence.dll
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\obj\Debug\net5.0\refint\Ecommerce.Persistence.dll
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\obj\Debug\net5.0\Ecommerce.Persistence.pdb
+C:\Users\fabia\source\repos\TestDeveloper\Api\Ecommerce\Ecommerce.Persistence\obj\Debug\net5.0\ref\Ecommerce.Persistence.dll
