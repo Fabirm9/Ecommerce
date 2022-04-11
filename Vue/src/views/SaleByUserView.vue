@@ -7,8 +7,7 @@
                             :label="item.firstName + ' ' + item.lastName"
                             :value="item.id">
                         </el-option>
-        </el-select>
-        <div></div>
+        </el-select>        
     <el-table
         :data="salesbyuser"
         style="width: 100%">
@@ -23,7 +22,7 @@
           >
         </el-table-column>
         <el-table-column
-          prop="idProductName"
+          prop="idProduct"
           label="IdProductName"
           >
         </el-table-column>
