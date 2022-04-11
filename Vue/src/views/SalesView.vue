@@ -111,11 +111,11 @@ export default {
       handleDeleteItem(item){
             for(var i=0; i<this.salesProduct.length; i++)
             {
-                if(this.salesProduct[i].id == item.id){
+                if(this.salesProduct[i].idProduct == item.idProduct){
                     this.$store.state.saleTotal -=item.total;
                 } 
             }   
-            this.$store.state.salesProduct = this.salesProduct.filter(saleProduct => saleProduct.id !== item.id);
+            this.$store.state.salesProduct = this.salesProduct.filter(saleProduct => saleProduct.idProduct !== item.idProduct);
       },
       handleSendData(){          
           for(var i=0; i < this.$store.state.salesProduct.length; i++){

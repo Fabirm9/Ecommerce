@@ -164,8 +164,7 @@ export default new Vuex.Store({
     deleteProduct: async function({commit,  state }, data){
       
       try {
-        
-        commit('setProduct', data);             
+                    
         
         await axios.delete(`http://localhost:10000/api/ecommerceproducts/${data}`,
           {
