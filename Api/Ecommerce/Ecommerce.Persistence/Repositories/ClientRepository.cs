@@ -19,7 +19,7 @@ namespace Ecommerce.Persistence.Repositories
 
         public async Task<IEnumerable<ClientDto>> GetClients()
         {
-            var clients = await _context.Clients.ToListAsync();
+            var clients = await _context.Clients.Include(idt =>idt.IdIdentityTypeNavigation).ToListAsync();
             var clientsDto = new List<ClientDto>();
             foreach (var item in clients)
             {
@@ -28,6 +28,7 @@ namespace Ecommerce.Persistence.Repositories
                     Id = item.Id,
                     IdIdentityType = item.IdIdentityType,
                     IdentityTypeNumber = item.IdentityTypeNumber,
+                    IdentityTypeName = item.IdIdentityTypeNavigation.IdentityType1,
                     FirstName = item.FirstName,
                     LastName = item.LastName,
                     MobileNumber = item.MobileNumber
@@ -57,8 +58,7 @@ namespace Ecommerce.Persistence.Repositories
             return null;
         }
 
-
-        public async Task<bool> CreateClient(ClientDto clientDto)
+        public async Task<int> CreateClient(ClientDto clientDto)
         {
             var client = new Client
             {
@@ -71,7 +71,7 @@ namespace Ecommerce.Persistence.Repositories
             _context.Clients.Add(client);
             await _context.SaveChangesAsync();
 
-            return client.Id > 0 ? true : false;
+            return client.Id > 0 ? client.Id : 0;
         }
 
         public async Task<bool> UpdateClient(int id, ClientDto clientDto)
@@ -106,6 +106,22 @@ namespace Ecommerce.Persistence.Repositories
                 return true;
             }
             return false;
+        }
+
+        public async Task<IEnumerable<IdentityTypeDto>> GetIdentityTypes() 
+        {
+            var identityTypes = await _context.IdentityTypes.ToListAsync();
+            var identityTypesList = new List<IdentityTypeDto>();
+
+            foreach (var item in identityTypes) 
+            {
+                identityTypesList.Add(new IdentityTypeDto
+                {
+                    Id = item.Id,
+                    IdentityTypeName = item.IdentityType1
+                });
+            }
+            return identityTypesList;
         }
     }
 }

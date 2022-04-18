@@ -9,7 +9,8 @@ namespace Ecommerce.Core.Interfaces
         Task<IEnumerable<ClientDto>> GetClients();
         Task<ClientDto> GetClient(int idProduct);
         Task<bool> UpdateClient(int id, ClientDto productDto);
-        Task<bool> CreateClient(ClientDto productDto);
+        Task<int> CreateClient(ClientDto productDto);
         Task<bool> DeleteClient(int id);
+        Task<IEnumerable<IdentityTypeDto>> GetIdentityTypes();
     }
 }

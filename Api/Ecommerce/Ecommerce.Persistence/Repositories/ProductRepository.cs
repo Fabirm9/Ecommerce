@@ -51,7 +51,6 @@ namespace Ecommerce.Persistence.Repositories
             return null;
         }
 
-
         public async Task<int> CreateProduct(ProductDto productDto) 
         {            
             var product = new Product
