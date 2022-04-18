@@ -13,6 +13,9 @@
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/products">Products</router-link>        
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/clients">Clients</router-link>        
           </li>          
           <li class="nav-item">
             <router-link class="nav-link" to="/sales">Sales</router-link>        

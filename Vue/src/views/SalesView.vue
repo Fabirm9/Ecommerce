@@ -82,7 +82,7 @@ export default {
         this.$store.dispatch('getClients')
       },
       updated(){
-          if(this.openModal.open === true)
+          if(this.$store.state.openModal.open === true)
           {
               this.handleOpenModal('Buy created');
           }
@@ -124,13 +124,16 @@ export default {
           this.$store.dispatch('postSales', this.$store.state.salesProduct);
       },
       handleOpenModal(text){
+          this.drawer=false;
           this.$notify({
           title: text,
           message: text,
           type: 'success'
         });
-        this.drawer = false;
-        this.$store.state.openModal=false;
+        this.$store.state.openModal={
+            open:false,
+            type:''
+        };
        }
     }
 }

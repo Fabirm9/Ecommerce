@@ -1,36 +1,43 @@
 <template>
-  <div class="row">
+     <div class="row">
     <div class="col-12 mt-5">
-      <h1 class="text-left">Products</h1>
+      <h1 class="text-left">Clients</h1>
       <div class="col-md-3">
         <el-button @click="drawer = true" type="primary" plain>Create</el-button>
       </div>
     </div>
-    <div class="col-12 mt-5">
-      
+    <div class="col-12 mt-5">      
       <el-table
-        :data="products"
+        :data="clients"
         style="width: 100%">
         <el-table-column
           prop="id"
-          label="Id"
-          >
+          label="Id">
         </el-table-column>
         <el-table-column
-          prop="productName"
-          label="ProductName"
-          >
+          prop="firstName"
+          label="FirstName">
         </el-table-column>
         <el-table-column
-          prop="price"
-          label="Price"
-          >
+          prop="lastName"
+          label="LastName">
+        </el-table-column>
+        <el-table-column
+          prop="mobileNumber"
+          label="MobileNumber">
+        </el-table-column>
+        <el-table-column
+          prop="identityTypeName"
+          label="IdentityTypeName">
+        </el-table-column>
+        <el-table-column
+          prop="identityTypeNumber"
+          label="IdentityTypeNumber">
         </el-table-column>
         <el-table-column          
-          label="Actions"
-          >
+          label="Actions">
           <template slot-scope="scope">
-                <el-button type="primary" icon="el-icon-edit" circle @click="handleEdit(`${scope.row.id}`)">
+        <el-button type="primary" icon="el-icon-edit" circle @click="handleEdit(`${scope.row.id}`)">
            </el-button>           
            <el-button type="danger" icon="el-icon-delete" circle @click="handleDeleteItem(`${scope.row.id}`)"></el-button>
             </template>
@@ -41,55 +48,46 @@
     </div>
     <div>
     <el-drawer
-      title="Create product"
+      title="Create client"
       :visible.sync="drawer"
       :direction="direction">
       <div class="row">
         <div class="col-md-12">
-          <ProductForm/>
+          <ClientForm/>
         </div>
       </div>
     </el-drawer>
     </div>
   </div>
 </template>
-
 <script>
 import {mapActions, mapState } from 'vuex';
-import ProductForm from '@/components/ProductForm.vue'
+import ClientForm from '@/components/ClientForm.vue'
 export default {
-      components:{
-        ProductForm
-      },
-      data() {
-        return {
-          drawer: false,
-          direction: 'rtl',
+    components:{
+      ClientForm      
+    },
+    data(){
+        return{
+            drawer:false,
+            direction:'rtl'
         }
-      },
-      computed:{
-        ...mapState(["products",'openModal']),
-      },
-      created(){
-        this.$store.dispatch('getProduts');        
-      },
-      mounted(){
-        if(this.$store.state.openModal.open === true){
-          let text = "edit product"
-          this.handleOpenModal(text);
-        }
-      },
-      updated(){
-        if(this.$store.state.openModal.open === true){
+
+    },
+    computed:{
+        ...mapState(['clients'])
+    },
+    mounted(){
+        this.$store.dispatch('getClients','openModal');
+    },
+    updated(){
+      if(this.$store.state.openModal.open === true){
           let text = this.$store.state.openModal.type == "create" ? "create product" : "deleted product"
           this.handleOpenModal(text);
         }
-      },
-      methods:{
-        handleEdit(value){
-           this.$router.push(`/product/${value}`)
-        },
-        handleOpenModal(text){
+    },
+    methods:{
+      handleOpenModal(text){
           this.drawer=false;
           this.$notify({
           title: 'Success',
@@ -100,12 +98,14 @@ export default {
           open:false,
           type:''
         };
-        },
-        handleDeleteItem(value){
-          this.$store.dispatch('deleteProduct', value);
-        }
+      },
+      handleEdit(value){
+        this.$store.dispatch('deleteCient', value);
+      },
+      handleDeleteItem(value){
+        this.$store.dispatch('deleteClient', value);
       }
-      
-
     }
+
+}
 </script>

@@ -12,12 +12,23 @@ export default new Vuex.Store({
     clients: [],
     salesbyuser:[],
     client:'',
+    identityType:'',
+    identityTypes:[],
     product: {},
     saleTotal:0,
     ruleForm: {
       id:0,
       productName: '',
       price: 0,
+      type:''
+    },
+    formClient: {
+      id:0,
+      firstName: '',
+      lastName: '',
+      idIdentityType: '',
+      identityTypeNumber: '',
+      mobileNumber:'',
       type:''
     },
     openModal:{
@@ -49,6 +60,9 @@ export default new Vuex.Store({
     },
     setOpenModal(state, payload){
       state.openModal = payload;
+    },
+    setIdentityTypes(state, payload){
+      state.identityTypes = payload;
     }
   },
   actions: {
@@ -116,7 +130,6 @@ export default new Vuex.Store({
         }).then(response => {          
             if(response.status === 200){
               let dataModal = {type:'create', open:true};              
-              //router.push('/products');
               commit('setOpenModal', dataModal);
               state.ruleForm ={
                 id:0,
@@ -161,11 +174,8 @@ export default new Vuex.Store({
         console.log(error);
       }
     },
-    deleteProduct: async function({commit,  state }, data){
-      
-      try {
-                    
-        
+    deleteProduct: async function({commit,  state }, data){      
+      try {    
         await axios.delete(`http://localhost:10000/api/ecommerceproducts/${data}`,
           {
           headers: {
@@ -183,7 +193,71 @@ export default new Vuex.Store({
       } catch (error) {
         console.log(error);
       }
-    }
+    },
+    getIdentityTypes: async function({commit, state}, data){
+      try {
+        await axios.get('http://localhost:10000/api/ecommerceidentitytypes').then(response =>{
+          commit('setIdentityTypes', response.data.data);
+        })
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    createClient: async function({commit, state}, data){
+      try {
+        await axios.post('http://localhost:10000/api/ecommerceclients',data,
+          {
+          headers: {
+          'Content-Type': 'application/json'
+          }
+        }).then(response => {          
+            if(response.status === 200){
+              let dataModal = {type:'create', open:true};              
+              commit('setOpenModal', dataModal);
+              state.formClient ={
+                id:0,
+                firstName: '',
+                lastName: '',
+                idIdentityType: '',
+                identityTypeNumber: '',
+                mobileNumber:'',
+                type:''
+              }
+              state.clients.push({
+                id: response.data,
+                firstName: data.firstName,
+                lastName : data.lastName,
+                mobileNumber: data.mobileNumber,
+                idIdentityType: data.idIdentityType,
+                identityTypeNumber: data.identityTypeNumber
+              });
+              commit('setClient','')
+            }
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    deleteClient: async function({commit,  state }, data){      
+      try {    
+        await axios.delete(`http://localhost:10000/api/ecommerceclients/${data}`,
+          {
+          headers: {
+          'Content-Type': 'application/json'
+          }
+        }).then(response => {          
+            if(response.status === 200){
+              let dataModal = {type:'delete', open:true};
+              commit('setOpenModal', dataModal);
+              let clients = state.clients;
+              let newData = clients.filter(item => item.id !== parseInt(data));
+              commit('setClients', newData);
+            }
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
   modules: {
   }

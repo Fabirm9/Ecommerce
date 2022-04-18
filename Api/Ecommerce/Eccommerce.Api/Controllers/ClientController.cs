@@ -25,17 +25,17 @@ namespace Eccommerce.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateProduct(ClientViewModel model)
+        public async Task<IActionResult> CreateClient(ClientViewModel model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var wasCreated = await _clientRepository.CreateClient(BuildProductDto(model));
-                    if (wasCreated)
-                        return Ok(new ResponseMessage { Message = "created product", Status = 0 });
+                    var idClient = await _clientRepository.CreateClient(BuildProductDto(model));
+                    if (idClient>0)
+                        return Ok(idClient);
                     else
-                        return BadRequest(new ResponseMessage { Message = "created product", Status = 0 });
+                        return BadRequest(new ResponseMessage { Message = "problem with client", Status = 1 });
                 }
                 return BadRequest(new ResponseMessage { Message = "Problem with Model", Status = 2 });
             }
@@ -47,7 +47,7 @@ namespace Eccommerce.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Products()
+        public async Task<IActionResult> Clients()
         {
             var clients = await _clientRepository.GetClients();
             if (clients.Count() > 0) 
@@ -60,7 +60,7 @@ namespace Eccommerce.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Product(int id)
+        public async Task<IActionResult> Client(int id)
         {
             try
             {
@@ -78,7 +78,7 @@ namespace Eccommerce.Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, ClientViewModel model)
+        public async Task<IActionResult> UpdateClient(int id, ClientViewModel model)
         {
             try
             {
@@ -96,7 +96,7 @@ namespace Eccommerce.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> RemoveProduct(int id)
+        public async Task<IActionResult> RemoveClient(int id)
         {
             try
             {
