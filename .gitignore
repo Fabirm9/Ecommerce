@@ -1,10 +1,13 @@
-Api/Ecommerce/.vs
+.vs/
 *.dll
 
 *.pdb
 
 *.cache
 
+
+
+/Api/Ecommerce/.vs/
 Api/Ecommerce/Eccommerce.Api/bin/
 Api/Ecommerce/Eccommerce.Api/obj/
 
@@ -13,3 +16,6 @@ Api/Ecommerce/Ecommerce.Core/Ecommerce.Core/obj/
 
 Api/Ecommerce/Ecommerce.Persistence/bin/
 Api/Ecommerce/Ecommerce.Persistence/obj/
+
+Api/Ecommerce/Ecommerce.Testing/bin/
+Api/Ecommerce/Ecommerce.Testing/obj/
